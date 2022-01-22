@@ -26,7 +26,7 @@ class Recipe:
 
     @classmethod
     def save(cls, data):
-        query = "INSERT INTO recipes (name, description, thirty_mins, instructions, date_made) VALUES (%(name)s, %(description)s, %(thirty_mins)s, %(instructions)s, %(date_made)s);"
+        query = "INSERT INTO recipes (name, description, thirty_mins, instructions, date_made, user_id) VALUES (%(name)s, %(description)s, %(thirty_mins)s, %(instructions)s, %(date_made)s, %(user_id)s);"
         return connectToMySQL(cls.db).query_db(query, data)
 
     @classmethod
@@ -37,7 +37,7 @@ class Recipe:
 
     @classmethod
     def update(cls, data):
-        query = "UPDATE recipes SET name=%(name)s, description=%(description)s, thirty_mins=%(thirty_mins)s, instructions=%(instructions)s, date_made=%(date_made)s, updated_at=%(updated_at)s;"
+        query = "UPDATE recipes SET name=%(name)s, description=%(description)s, thirty_mins=%(thirty_mins)s, instructions=%(instructions)s, date_made=%(date_made)s, updated_at=NOW();"
         return connectToMySQL(cls.db).query_db(query, data)
 
     @classmethod

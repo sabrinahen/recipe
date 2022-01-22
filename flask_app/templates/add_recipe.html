@@ -9,7 +9,6 @@
 <body>
     <header>
         <h1>Welcome {{user.first_name}}! | <a href="/recipes/new">Create</a> | <a href="/logout">Logout</a></h1>
-        <p>These are your recipes!</p>
     </header>
     {% with messages = get_flashed_messages() %}
     {% if messages %}
@@ -39,7 +38,7 @@
         <div>
             <label for="thirty_mins">Under 30 minutes?</label>
             <input type="radio" name="thirty_mins" value="1">
-            <label for="1"><strong>Yes</strong><label>
+            <label for="1">Yes<label>
             <input type="radio" name="thirty_mins" value="0">
             <label for="0">No<label>
         </div>

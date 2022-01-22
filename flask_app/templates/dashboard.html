@@ -30,8 +30,10 @@
                 {% endif %}
                 <td>
                     <a href="/recipe/{{ recipe.id }}">view instructions</a> |
+                    {% if recipe.user_id == session.user_id %}
                     <a href="/recipe/edit/{{ recipe.id }}">edit</a> |
                     <a href="/recipe/destroy/{{ recipe.id }}">delete</a>
+                    {% endif %}
                 </td>
             </tr>
             {% endfor %}
